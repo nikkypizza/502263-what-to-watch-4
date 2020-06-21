@@ -2,7 +2,7 @@ import React from 'react';
 import SmallMovieCard from '../small-movie-card/small-movie-card.jsx';
 import PropTypes from 'prop-types';
 
-const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr}) => {
+const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovieTitleClick}) => {
   return (
     <>
       <section className="movie-card">
@@ -98,7 +98,7 @@ const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr}) => {
           </ul>
 
           <div className="catalog__movies-list">
-            {movieTitlesArr.map((it, i) => <SmallMovieCard movieTitle={it} key={it + i} />)}
+            {movieTitlesArr.map((it, i) => <SmallMovieCard movieTitle={it} onClick={onMovieTitleClick} key={`element-` + i} />)}
           </div>
 
           <div className="catalog__more">
@@ -128,7 +128,8 @@ Main.propTypes = {
   promoTitle: PropTypes.string.isRequired,
   promoGenre: PropTypes.string.isRequired,
   promoReleaseDate: PropTypes.number.isRequired,
-  movieTitlesArr: PropTypes.arrayOf(PropTypes.string).isRequired
+  movieTitlesArr: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onMovieTitleClick: PropTypes.func.isRequired
 };
 
 export default Main;
