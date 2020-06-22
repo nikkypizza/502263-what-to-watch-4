@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import App from './components/app.jsx';
 
 const promoMovieData = {
-  title: `The Grand Budapest Hotel`,
-  genre: `Drama`,
-  releaseDate: 2014
+  promoTitle: `The Grand Budapest Hotel`,
+  promoGenre: `Drama`,
+  promoReleaseDate: 2014
 };
 
 const movieListTitles = [
@@ -31,10 +31,15 @@ const movieListTitles = [
   `Midnight Special`
 ];
 
+const onTitleClick = (evt) => {
+  evt.preventDefault();
+};
+
 ReactDOM.render(
     <App
       {...promoMovieData}
-      titlesArr={movieListTitles}
+      movieTitlesArr={movieListTitles}
+      onMovieTitleClick={onTitleClick}
     />,
     document.getElementById(`root`)
 );
