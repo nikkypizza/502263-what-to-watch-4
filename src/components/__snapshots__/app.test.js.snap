@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            The Grand Budapest Hotel
+            Grand Torino
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              Drama
+              drama
             </span>
             <span
               className="movie-card__year"
             >
-              2014
+              2009
             </span>
           </p>
           <div
@@ -259,14 +259,16 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
+              alt="Grand Torino"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="pic.jpeg"
               width="280"
             />
           </div>
@@ -276,22 +278,24 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="title.html"
             >
-              Fantastic Beasts: The Crimes of Grindelwald
+              Grand Torino
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Bohemian Rhapsody"
+              alt="Grand Torino"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="pic.jpeg"
               width="280"
             />
           </div>
@@ -301,22 +305,24 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="title.html"
             >
-              Bohemian Rhapsody
+              Grand Torino
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Macbeth"
+              alt="Grand Torino"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="pic.jpeg"
               width="280"
             />
           </div>
@@ -326,9 +332,9 @@ Array [
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="title.html"
             >
-              Macbeth
+              Grand Torino
             </a>
           </h3>
         </article>

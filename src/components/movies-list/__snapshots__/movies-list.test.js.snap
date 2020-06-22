@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Component renders 1`] = `
+<div
+  className="catalog__movies-list"
+>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Snatch"
+        height="175"
+        src="list.jpeg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="index.html"
+      >
+        Snatch
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Snatch"
+        height="175"
+        src="list.jpeg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="index.html"
+      >
+        Snatch
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Snatch"
+        height="175"
+        src="list.jpeg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+      onClick={[Function]}
+    >
+      <a
+        className="small-movie-card__link"
+        href="index.html"
+      >
+        Snatch
+      </a>
+    </h3>
+  </article>
+</div>
+`;

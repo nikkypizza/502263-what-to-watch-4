@@ -3,14 +3,16 @@
 exports[`SmallMovieCard Component renders 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
   <div
     className="small-movie-card__image"
   >
     <img
-      alt="Breaking Bad"
+      alt="Snatch"
       height="175"
-      src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+      src="src/image.jpeg"
       width="280"
     />
   </div>
@@ -20,9 +22,9 @@ exports[`SmallMovieCard Component renders 1`] = `
   >
     <a
       className="small-movie-card__link"
-      href="movie-page.html"
+      href="https://index.html"
     >
-      Breaking Bad
+      Snatch
     </a>
   </h3>
 </article>
