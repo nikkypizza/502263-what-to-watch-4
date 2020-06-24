@@ -2,23 +2,36 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './app';
 
-const promoMovieData = {
-  promoTitle: `The Grand Budapest Hotel`,
-  promoGenre: `Drama`,
-  promoReleaseDate: 2014
+const mock = {
+  promoDataObj: {
+    title: `Grand Torino`,
+    genre: `drama`,
+    releaseYear: 2009
+  },
+  moviesDataArr: [{
+    title: `Grand Torino`,
+    imgSrc: `pic.jpeg`,
+    linkURL: `title.html`
+  },
+  {
+    title: `Grand Torino`,
+    imgSrc: `pic.jpeg`,
+    linkURL: `title.html`
+  },
+  {
+    title: `Grand Torino`,
+    imgSrc: `pic.jpeg`,
+    linkURL: `title.html`
+  }]
 };
-
-const movieListTitles = [`Fantastic Beasts: The Crimes of Grindelwald`, `Bohemian Rhapsody`, `Macbeth`];
-const onTitleClick = (evt) => evt.preventDefault();
 
 describe(`SmallMovieCard Component`, () => {
   it(`renders`, () => {
     const tree = renderer
       .create(
           <App
-            {...promoMovieData}
-            movieTitlesArr={movieListTitles}
-            onMovieTitleClick={onTitleClick}
+            promoDataObj={mock.promoDataObj}
+            moviesDataArr={mock.moviesDataArr}
           />
       )
       .toJSON();

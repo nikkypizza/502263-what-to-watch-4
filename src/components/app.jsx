@@ -2,24 +2,26 @@ import React from 'react';
 import Main from './main/main.jsx';
 import PropTypes from 'prop-types';
 
-const App = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovieTitleClick}) => {
+const App = ({promoDataObj, moviesDataArr}) => {
   return (
     <Main
-      promoTitle={promoTitle}
-      promoGenre={promoGenre}
-      promoReleaseDate={promoReleaseDate}
-      movieTitlesArr={movieTitlesArr}
-      onMovieTitleClick={onMovieTitleClick}
+      promoDataObj={promoDataObj}
+      moviesDataArr={moviesDataArr}
     />
   );
 };
 
 App.propTypes = {
-  promoTitle: PropTypes.string.isRequired,
-  promoGenre: PropTypes.string.isRequired,
-  promoReleaseDate: PropTypes.number.isRequired,
-  movieTitlesArr: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onMovieTitleClick: PropTypes.func.isRequired
+  promoDataObj: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseYear: PropTypes.number.isRequired
+  }).isRequired,
+  moviesDataArr: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    linkURL: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default App;

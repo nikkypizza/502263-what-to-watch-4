@@ -3,8 +3,12 @@ import renderer from 'react-test-renderer';
 import SmallMovieCard from './small-movie-card.jsx';
 
 const mock = {
-  movieTitle: `Breaking Bad`,
-  onClick: () => ``
+  title: `Snatch`,
+  imgSrc: `src/image.jpeg`,
+  linkURL: `https://index.html`,
+  onClick: () => {},
+  onMouseEnter: () => {},
+  onMouseLeave: () => {}
 };
 
 describe(`SmallMovieCard Component`, () => {

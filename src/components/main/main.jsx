@@ -1,8 +1,8 @@
 import React from 'react';
-import SmallMovieCard from '../small-movie-card/small-movie-card.jsx';
+import MoviesList from '../movies-list/movies-list.jsx';
 import PropTypes from 'prop-types';
 
-const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovieTitleClick}) => {
+const Main = ({promoDataObj, moviesDataArr}) => {
   return (
     <>
       <section className="movie-card">
@@ -35,10 +35,10 @@ const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovie
             </div>
 
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{promoTitle}</h2>
+              <h2 className="movie-card__title">{promoDataObj.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{promoGenre}</span>
-                <span className="movie-card__year">{promoReleaseDate}</span>
+                <span className="movie-card__genre">{promoDataObj.genre}</span>
+                <span className="movie-card__year">{promoDataObj.releaseYear}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -97,9 +97,7 @@ const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovie
             </li>
           </ul>
 
-          <div className="catalog__movies-list">
-            {movieTitlesArr.map((it, i) => <SmallMovieCard movieTitle={it} onClick={onMovieTitleClick} key={`element-` + i} />)}
-          </div>
+          {<MoviesList dataArr={moviesDataArr} />}
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -125,11 +123,16 @@ const Main = ({promoTitle, promoGenre, promoReleaseDate, movieTitlesArr, onMovie
 };
 
 Main.propTypes = {
-  promoTitle: PropTypes.string.isRequired,
-  promoGenre: PropTypes.string.isRequired,
-  promoReleaseDate: PropTypes.number.isRequired,
-  movieTitlesArr: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onMovieTitleClick: PropTypes.func.isRequired
+  promoDataObj: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseYear: PropTypes.number.isRequired
+  }).isRequired,
+  moviesDataArr: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    linkURL: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Main;

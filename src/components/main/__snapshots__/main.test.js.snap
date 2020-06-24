@@ -259,14 +259,16 @@ Array [
       >
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="We should talk about kevin"
+              alt="Midnight Special"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/midnight-special.jpg"
               width="280"
             />
           </div>
@@ -278,20 +280,22 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              We should talk about kevin
+              Midnight Special
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="HuperuCube"
+              alt="War of the Worlds"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/war-of-the-worlds.jpg"
               width="280"
             />
           </div>
@@ -303,20 +307,22 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              HuperuCube
+              War of the Worlds
             </a>
           </h3>
         </article>
         <article
           className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
         >
           <div
             className="small-movie-card__image"
           >
             <img
-              alt="Jill"
+              alt="Dardjeeling Limited"
               height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+              src="img/dardjeeling-limited.jpg"
               width="280"
             />
           </div>
@@ -328,7 +334,7 @@ Array [
               className="small-movie-card__link"
               href="movie-page.html"
             >
-              Jill
+              Dardjeeling Limited
             </a>
           </h3>
         </article>
