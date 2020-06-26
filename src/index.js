@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import App from './components/app.jsx';
-import mockFilmsData from './mocks/films.js';
+import filmsArr from './mocks/films.js';
+import promoObj from './mocks/promo.js';
 
 ReactDOM.render(
     <App
-      promoDataObj={mockFilmsData.promo}
-      moviesDataArr={mockFilmsData.movies}
+      promoDataObj={promoObj}
+      moviesDataArr={filmsArr}
     />,
     document.getElementById(`root`)
 );

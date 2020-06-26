@@ -10,21 +10,21 @@ exports[`SmallMovieCard Component renders 1`] = `
     className="small-movie-card__image"
   >
     <img
-      alt="Snatch"
+      alt="The Grand Budapest Hotel"
       height="175"
-      src="src/image.jpeg"
+      src="img/the-grand-budapest-hotel-poster.jpg"
       width="280"
     />
   </div>
   <h3
     className="small-movie-card__title"
-    onClick={[Function]}
   >
     <a
       className="small-movie-card__link"
-      href="https://index.html"
+      href="movie-page.html"
+      onClick={[Function]}
     >
-      Snatch
+      The Grand Budapest Hotel
     </a>
   </h3>
 </article>

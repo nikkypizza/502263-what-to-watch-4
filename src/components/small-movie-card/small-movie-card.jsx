@@ -1,26 +1,29 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {string, func} from 'prop-types';
 
-const SmallMovieCard = ({title, imgSrc, linkURL, onClick, onMouseEnter, onMouseLeave}) => {
+const SmallMovieCard = ({title, mainPosterUrl, onClick, onMouseEnter, onMouseLeave}) => {
   return (
-    <article className="small-movie-card catalog__movies-card" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+    <article
+      className="small-movie-card catalog__movies-card"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <div className="small-movie-card__image">
-        <img src={imgSrc} alt={title} width="280" height="175" />
+        <img src={mainPosterUrl} alt={title} width="280" height="175" />
       </div>
-      <h3 className="small-movie-card__title" onClick={onClick}>
-        <a className="small-movie-card__link" href={linkURL}>{title}</a>
+      <h3 className="small-movie-card__title">
+        <a className="small-movie-card__link" href="movie-page.html" onClick={onClick}>{title}</a>
       </h3>
     </article>
   );
 };
 
 SmallMovieCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired,
-  linkURL: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  onMouseEnter: PropTypes.func.isRequired,
-  onMouseLeave: PropTypes.func.isRequired
+  title: string.isRequired,
+  mainPosterUrl: string.isRequired,
+  onClick: func.isRequired,
+  onMouseEnter: func.isRequired,
+  onMouseLeave: func.isRequired
 };
 
 export default SmallMovieCard;

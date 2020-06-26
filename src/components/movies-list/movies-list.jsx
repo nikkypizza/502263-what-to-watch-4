@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {withRouter} from 'react-router-dom';
+import {arrayOf, shape, string, func} from 'prop-types';
+
 import SmallMovieCard from '../small-movie-card/small-movie-card.jsx';
 
 class MoviesList extends React.PureComponent {
@@ -8,6 +10,12 @@ class MoviesList extends React.PureComponent {
     this.state = {
       activeItem: null,
     };
+  }
+
+  onCardClickWrapper(evt) {
+    evt.preventDefault();
+    this.props.history.push(`/movie-page`);
+    return this.props.onMovieCardClick(this.state.activeItem);
   }
 
   render() {
@@ -19,7 +27,7 @@ class MoviesList extends React.PureComponent {
           return (
             <SmallMovieCard
               {...dataItem}
-              onClick={(evt) => evt.preventDefault()}
+              onClick={this.onCardClickWrapper.bind(this)}
               onMouseEnter={() => this.setState({activeItem: dataItem})}
               onMouseLeave={() => this.setState({activeItem: null})}
               key={`element-` + i}
@@ -33,11 +41,14 @@ class MoviesList extends React.PureComponent {
 }
 
 MoviesList.propTypes = {
-  dataArr: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    linkURL: PropTypes.string.isRequired,
+  onMovieCardClick: func,
+  history: shape({
+    history: func
+  }),
+  dataArr: arrayOf(shape({
+    title: string.isRequired,
+    mainPosterUrl: string.isRequired
   })).isRequired
 };
 
-export default MoviesList;
+export default withRouter(MoviesList);

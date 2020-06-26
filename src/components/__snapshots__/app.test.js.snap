@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            Grand Torino
+            The Grand Budapest Hotel
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              drama
+              Drama
             </span>
             <span
               className="movie-card__year"
             >
-              2009
+              2014
             </span>
           </p>
           <div
@@ -266,21 +266,21 @@ Array [
             className="small-movie-card__image"
           >
             <img
-              alt="Grand Torino"
+              alt="Moonrise Kingdom"
               height="175"
-              src="pic.jpeg"
+              src="img/moonrise-kingdom.jpg"
               width="280"
             />
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
-              href="title.html"
+              href="movie-page.html"
+              onClick={[Function]}
             >
-              Grand Torino
+              Moonrise Kingdom
             </a>
           </h3>
         </article>
@@ -293,21 +293,21 @@ Array [
             className="small-movie-card__image"
           >
             <img
-              alt="Grand Torino"
+              alt="Seven Years in Tibet"
               height="175"
-              src="pic.jpeg"
+              src="img/seven-years-in-tibet.jpg"
               width="280"
             />
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
-              href="title.html"
+              href="movie-page.html"
+              onClick={[Function]}
             >
-              Grand Torino
+              Seven Years in Tibet
             </a>
           </h3>
         </article>
@@ -320,21 +320,156 @@ Array [
             className="small-movie-card__image"
           >
             <img
-              alt="Grand Torino"
+              alt="Midnight Special"
               height="175"
-              src="pic.jpeg"
+              src="img/midnight-special.jpg"
               width="280"
             />
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
-              href="title.html"
+              href="movie-page.html"
+              onClick={[Function]}
             >
-              Grand Torino
+              Midnight Special
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="War of the Worlds"
+              height="175"
+              src="img/war-of-the-worlds.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              War of the Worlds
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Dardjeeling Limited"
+              height="175"
+              src="img/dardjeeling-limited.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Dardjeeling Limited
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Orlando"
+              height="175"
+              src="img/orlando.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Orlando
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Mindhunter"
+              height="175"
+              src="img/mindhunter.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Mindhunter
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Snatch"
+              height="175"
+              src="img/snatch.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Snatch
             </a>
           </h3>
         </article>

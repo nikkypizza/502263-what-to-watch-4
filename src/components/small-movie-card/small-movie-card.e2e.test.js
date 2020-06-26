@@ -1,12 +1,11 @@
 import React from 'react';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import SmallMovieCard from './small-movie-card.jsx';
 
-const mock = {
-  title: `Snatch`,
-  imgSrc: `src/image.jpeg`,
-  linkURL: `https://index.html`,
+import SmallMovieCard from './small-movie-card.jsx';
+import promoObj from '../../mocks/promo.js';
+
+const mockFunctions = {
   onClick: jest.fn(),
   onMouseEnter: jest.fn(),
   onMouseLeave: jest.fn()
@@ -19,28 +18,28 @@ Enzyme.configure({
 describe(`SmallMovieCard E2E`, () => {
   it(`should react to title click`, () => {
     const main = mount(
-        <SmallMovieCard {...mock} />
+        <SmallMovieCard {...promoObj} {...mockFunctions}/>
     );
 
-    main.find(`.small-movie-card__title`).simulate(`click`);
-    expect(mock.onClick).toHaveBeenCalledTimes(1);
+    main.find(`.small-movie-card__link`).simulate(`click`);
+    expect(mockFunctions.onClick).toHaveBeenCalledTimes(1);
   });
 
   it(`should react to mouse enter`, () => {
     const main = mount(
-        <SmallMovieCard {...mock} />
+        <SmallMovieCard {...promoObj} {...mockFunctions} />
     );
 
     main.find(`.small-movie-card`).simulate(`mouseenter`);
-    expect(mock.onMouseEnter).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.onMouseEnter).toHaveBeenCalledTimes(1);
   });
 
   it(`should react to mouse leave`, () => {
     const main = mount(
-        <SmallMovieCard {...mock} />
+        <SmallMovieCard {...promoObj} {...mockFunctions} />
     );
 
     main.find(`.small-movie-card`).simulate(`mouseleave`);
-    expect(mock.onMouseLeave).toHaveBeenCalledTimes(1);
+    expect(mockFunctions.onMouseLeave).toHaveBeenCalledTimes(1);
   });
 });

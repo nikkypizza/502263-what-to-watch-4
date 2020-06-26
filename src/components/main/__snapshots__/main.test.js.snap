@@ -81,7 +81,7 @@ Array [
           <h2
             className="movie-card__title"
           >
-            Breaking Bad
+            The Grand Budapest Hotel
           </h2>
           <p
             className="movie-card__meta"
@@ -89,12 +89,12 @@ Array [
             <span
               className="movie-card__genre"
             >
-              drama
+              Drama
             </span>
             <span
               className="movie-card__year"
             >
-              2008
+              2014
             </span>
           </p>
           <div
@@ -266,6 +266,60 @@ Array [
             className="small-movie-card__image"
           >
             <img
+              alt="Moonrise Kingdom"
+              height="175"
+              src="img/moonrise-kingdom.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Moonrise Kingdom
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Seven Years in Tibet"
+              height="175"
+              src="img/seven-years-in-tibet.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Seven Years in Tibet
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
               alt="Midnight Special"
               height="175"
               src="img/midnight-special.jpg"
@@ -274,11 +328,11 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Midnight Special
             </a>
@@ -301,11 +355,11 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               War of the Worlds
             </a>
@@ -328,13 +382,94 @@ Array [
           </div>
           <h3
             className="small-movie-card__title"
-            onClick={[Function]}
           >
             <a
               className="small-movie-card__link"
               href="movie-page.html"
+              onClick={[Function]}
             >
               Dardjeeling Limited
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Orlando"
+              height="175"
+              src="img/orlando.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Orlando
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Mindhunter"
+              height="175"
+              src="img/mindhunter.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Mindhunter
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <div
+            className="small-movie-card__image"
+          >
+            <img
+              alt="Snatch"
+              height="175"
+              src="img/snatch.jpg"
+              width="280"
+            />
+          </div>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+              onClick={[Function]}
+            >
+              Snatch
             </a>
           </h3>
         </article>

@@ -1,27 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import MoviesList from './movies-list.jsx';
+import {BrowserRouter} from 'react-router-dom';
 
-const mock = [{
-  title: `Snatch`,
-  imgSrc: `list.jpeg`,
-  linkURL: `index.html`
-},
-{
-  title: `Snatch`,
-  imgSrc: `list.jpeg`,
-  linkURL: `index.html`
-},
-{
-  title: `Snatch`,
-  imgSrc: `list.jpeg`,
-  linkURL: `index.html`
-}];
+import MoviesList from './movies-list.jsx';
+import filmsArr from '../../mocks/films.js';
 
 describe(`Main Component`, () => {
   it(`renders`, () => {
     const tree = renderer.create(
-        <MoviesList dataArr={mock} />
+        <BrowserRouter>
+          <MoviesList dataArr={filmsArr} />
+        </BrowserRouter>
     ).toJSON();
 
     expect(tree).toMatchSnapshot();

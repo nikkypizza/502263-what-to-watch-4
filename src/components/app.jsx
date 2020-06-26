@@ -1,27 +1,51 @@
 import React from 'react';
-import Main from './main/main.jsx';
-import PropTypes from 'prop-types';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {object, arrayOf} from 'prop-types';
 
-const App = ({promoDataObj, moviesDataArr}) => {
-  return (
-    <Main
-      promoDataObj={promoDataObj}
-      moviesDataArr={moviesDataArr}
-    />
-  );
-};
+import Main from './main/main.jsx';
+import MoviePage from './movie-page/movie-page.jsx';
+
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentCardData: null
+    };
+  }
+
+  _onCardClick(props) {
+    this.setState({
+      currentCardData: props
+    });
+  }
+
+  render() {
+    const {promoDataObj, moviesDataArr} = this.props;
+
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <Main
+              promoDataObj={promoDataObj}
+              moviesDataArr={moviesDataArr}
+              onCardClick={this._onCardClick.bind(this)}
+            />
+          </Route>
+          <Route exact path="/movie-page">
+            <MoviePage
+              movieData={this.state.currentCardData || promoDataObj}
+            />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 
 App.propTypes = {
-  promoDataObj: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseYear: PropTypes.number.isRequired
-  }).isRequired,
-  moviesDataArr: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    linkURL: PropTypes.string.isRequired,
-  })).isRequired,
+  promoDataObj: object.isRequired,
+  moviesDataArr: arrayOf(object.isRequired).isRequired,
 };
 
 export default App;

@@ -1,8 +1,9 @@
 import React from 'react';
-import MoviesList from '../movies-list/movies-list.jsx';
-import PropTypes from 'prop-types';
+import {arrayOf, object, func} from 'prop-types';
 
-const Main = ({promoDataObj, moviesDataArr}) => {
+import MoviesList from '../movies-list/movies-list.jsx';
+
+const Main = ({promoDataObj, moviesDataArr, onCardClick}) => {
   return (
     <>
       <section className="movie-card">
@@ -31,7 +32,7 @@ const Main = ({promoDataObj, moviesDataArr}) => {
         <div className="movie-card__wrap">
           <div className="movie-card__info">
             <div className="movie-card__poster">
-              <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width="218" height="327" />
+              <img src={promoDataObj.mainPosterUrl} alt={`${promoDataObj.title} poster`} width="218" height="327" />
             </div>
 
             <div className="movie-card__desc">
@@ -97,7 +98,7 @@ const Main = ({promoDataObj, moviesDataArr}) => {
             </li>
           </ul>
 
-          {<MoviesList dataArr={moviesDataArr} />}
+          {<MoviesList dataArr={moviesDataArr} onMovieCardClick={onCardClick}/>}
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -123,16 +124,9 @@ const Main = ({promoDataObj, moviesDataArr}) => {
 };
 
 Main.propTypes = {
-  promoDataObj: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    releaseYear: PropTypes.number.isRequired
-  }).isRequired,
-  moviesDataArr: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    imgSrc: PropTypes.string.isRequired,
-    linkURL: PropTypes.string.isRequired,
-  })).isRequired,
+  promoDataObj: object.isRequired,
+  moviesDataArr: arrayOf(object).isRequired,
+  onCardClick: func
 };
 
 export default Main;
