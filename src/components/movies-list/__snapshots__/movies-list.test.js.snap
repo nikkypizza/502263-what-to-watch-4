@@ -12,10 +12,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Moonrise Kingdom"
+      <video
         height="175"
-        src="img/moonrise-kingdom.jpg"
+        poster="img/moonrise-kingdom.jpg"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -39,10 +39,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Seven Years in Tibet"
+      <video
         height="175"
-        src="img/seven-years-in-tibet.jpg"
+        poster="img/seven-years-in-tibet.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -66,10 +66,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Midnight Special"
+      <video
         height="175"
-        src="img/midnight-special.jpg"
+        poster="img/midnight-special.jpg"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -93,10 +93,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="War of the Worlds"
+      <video
         height="175"
-        src="img/war-of-the-worlds.jpg"
+        poster="img/war-of-the-worlds.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -120,10 +120,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Dardjeeling Limited"
+      <video
         height="175"
-        src="img/dardjeeling-limited.jpg"
+        poster="img/dardjeeling-limited.jpg"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -147,10 +147,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Orlando"
+      <video
         height="175"
-        src="img/orlando.jpg"
+        poster="img/orlando.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>
@@ -174,10 +174,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Mindhunter"
+      <video
         height="175"
-        src="img/mindhunter.jpg"
+        poster="img/mindhunter.jpg"
+        src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
         width="280"
       />
     </div>
@@ -201,10 +201,10 @@ exports[`Main Component renders 1`] = `
     <div
       className="small-movie-card__image"
     >
-      <img
-        alt="Snatch"
+      <video
         height="175"
-        src="img/snatch.jpg"
+        poster="img/snatch.jpg"
+        src="https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm"
         width="280"
       />
     </div>

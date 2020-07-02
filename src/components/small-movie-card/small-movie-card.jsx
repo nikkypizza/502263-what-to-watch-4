@@ -1,7 +1,9 @@
 import React from 'react';
-import {string, func} from 'prop-types';
+import {string, func, bool} from 'prop-types';
 
-const SmallMovieCard = ({title, mainPosterUrl, onClick, onMouseEnter, onMouseLeave}) => {
+import VideoPlayer from '../video-player/video-player.jsx';
+
+const SmallMovieCard = ({title, mainPosterUrl, trailerUrl, onClick, onMouseEnter, onMouseLeave, isVideoPlaying}) => {
   return (
     <article
       className="small-movie-card catalog__movies-card"
@@ -9,7 +11,7 @@ const SmallMovieCard = ({title, mainPosterUrl, onClick, onMouseEnter, onMouseLea
       onMouseLeave={onMouseLeave}
     >
       <div className="small-movie-card__image">
-        <img src={mainPosterUrl} alt={title} width="280" height="175" />
+        <VideoPlayer src={trailerUrl} poster={mainPosterUrl} active={isVideoPlaying}/>
       </div>
       <h3 className="small-movie-card__title">
         <a className="small-movie-card__link" href="movie-page.html" onClick={onClick}>{title}</a>
@@ -21,9 +23,11 @@ const SmallMovieCard = ({title, mainPosterUrl, onClick, onMouseEnter, onMouseLea
 SmallMovieCard.propTypes = {
   title: string.isRequired,
   mainPosterUrl: string.isRequired,
+  trailerUrl: string.isRequired,
   onClick: func.isRequired,
   onMouseEnter: func.isRequired,
-  onMouseLeave: func.isRequired
+  onMouseLeave: func.isRequired,
+  isVideoPlaying: bool
 };
 
 export default SmallMovieCard;

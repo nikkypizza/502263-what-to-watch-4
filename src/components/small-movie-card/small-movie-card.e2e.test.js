@@ -18,7 +18,7 @@ Enzyme.configure({
 describe(`SmallMovieCard E2E`, () => {
   it(`should react to title click`, () => {
     const main = mount(
-        <SmallMovieCard {...promoObj} {...mockFunctions}/>
+        <SmallMovieCard {...promoObj} {...mockFunctions} />
     );
 
     main.find(`.small-movie-card__link`).simulate(`click`);

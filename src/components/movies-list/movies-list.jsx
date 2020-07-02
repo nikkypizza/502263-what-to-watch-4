@@ -9,17 +9,36 @@ class MoviesList extends React.PureComponent {
     super(props);
     this.state = {
       activeItem: null,
+      hoverTimer: null
     };
   }
 
-  onCardClickWrapper(evt) {
+  _handleCardTitleCLick(evt) {
     evt.preventDefault();
     this.props.history.push(`/movie-page`);
     return this.props.onMovieCardClick(this.state.activeItem);
   }
 
+  _handleMouseEnter(currentItem) {
+    const PLAY_DELAY_MS = 1000;
+
+    const hoverTimer = setTimeout(() => {
+      this.setState({activeItem: currentItem});
+    }, PLAY_DELAY_MS);
+
+    this.setState({hoverTimer});
+  }
+
+  _handleMouseLeave() {
+    const {hoverTimer} = this.state;
+    clearTimeout(hoverTimer);
+
+    this.setState({activeItem: null});
+  }
+
   render() {
     const {dataArr} = this.props;
+    const {activeItem} = this.state;
 
     return (
       <div className='catalog__movies-list'>
@@ -27,10 +46,11 @@ class MoviesList extends React.PureComponent {
           return (
             <SmallMovieCard
               {...dataItem}
-              onClick={this.onCardClickWrapper.bind(this)}
-              onMouseEnter={() => this.setState({activeItem: dataItem})}
-              onMouseLeave={() => this.setState({activeItem: null})}
-              key={`element-` + i}
+              isVideoPlaying={dataItem === activeItem}
+              onClick={this._handleCardTitleCLick.bind(this)}
+              onMouseEnter={() => this._handleMouseEnter(dataItem)}
+              onMouseLeave={() => this._handleMouseLeave()}
+              key={`element-${i}`}
             />
           );
         })
