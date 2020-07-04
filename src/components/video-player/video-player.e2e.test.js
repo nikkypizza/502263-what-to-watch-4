@@ -9,21 +9,31 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
+window.HTMLMediaElement.prototype.play = () => {};
+
+const callFnOnStateChange = (initialState, fnName) => {
+  const videoNode = mount(
+      <VideoPlayer
+        src={promoObj.trailerUrl}
+        poster={promoObj.mainPosterUrl}
+        active={initialState}
+      />
+  );
+
+  const inst = videoNode.instance();
+  const spy = jest.spyOn(inst, fnName);
+
+  videoNode.setProps({active: !initialState});
+  expect(spy).toHaveBeenCalledTimes(1);
+  spy.mockRestore();
+};
+
 describe(`VideoPlayer E2E`, () => {
-  it(`should change play/pause state`, () => {
-    const videoNode = mount(
-        <VideoPlayer
-          src={promoObj.trailerUrl}
-          poster={promoObj.mainPosterUrl}
-          active={true}
-        />
-    );
+  it(`should have a play state`, () => {
+    callFnOnStateChange(false, `_play`);
+  });
 
-    window.HTMLMediaElement.prototype.play = () => {};
-    const inst = videoNode.instance();
-    expect(inst.state.playing).toBe(false);
-
-    inst.componentDidUpdate();
-    expect(inst.state.playing).toBe(true);
+  it(`should have a pause (reset) state`, () => {
+    callFnOnStateChange(true, `_reset`);
   });
 });

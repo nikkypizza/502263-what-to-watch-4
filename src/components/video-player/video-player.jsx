@@ -5,17 +5,22 @@ class VideoPlayer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.videoNode = React.createRef();
-    this.state = {playing: false};
+  }
+
+  _play() {
+    this.videoNode.current.muted = true; // Обходной путь. Если задать атрибут muted тегу <video>, то при тестировании падает ошибка: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering. Референс - https://github.com/facebook/react/issues/10389#issuecomment-512565626
+    this.videoNode.current.play();
+  }
+
+  _reset() {
+    this.videoNode.current.src = this.props.src;
   }
 
   componentDidUpdate() {
-    this.setState({playing: this.props.active}); // можно было и без стейта обойтись, но не понял как тогда тестировать состояние. Пытался заполучить video.paused - не вышло
-
-    if (this.state.playing) {
-      this.videoNode.current.muted = true; // Обходной путь. Если задать атрибут muted, то падает ошибка: unstable_flushDiscreteUpdates: Cannot flush updates when React is already rendering.
-      this.videoNode.current.play();
+    if (this.props.active) {
+      this._play();
     } else {
-      this.videoNode.current.src = this.props.src;
+      this._reset();
     }
   }
 
