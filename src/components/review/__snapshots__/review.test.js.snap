@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Review Component renders 1`] = `
+<div
+  className="review"
+>
+  <blockquote
+    className="review__quote"
+  >
+    <p
+      className="review__text"
+    />
+    <footer
+      className="review__details"
+    >
+      <cite
+        className="review__author"
+      />
+      <time
+        className="review__date"
+      >
+        Invalid Date
+      </time>
+    </footer>
+  </blockquote>
+  <div
+    className="review__rating"
+  >
+    8.9
+  </div>
+</div>
+`;

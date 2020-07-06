@@ -14,6 +14,7 @@ class App extends React.PureComponent {
   }
 
   _onCardClick(props) {
+    document.body.scrollIntoView({block: `start`, behavior: `smooth`});
     this.setState({
       currentCardData: props
     });
@@ -35,6 +36,8 @@ class App extends React.PureComponent {
           <Route exact path="/movie-page">
             <MoviePage
               movieData={this.state.currentCardData || promoDataObj}
+              dataArr={moviesDataArr}
+              onCardClick={this._onCardClick.bind(this)}
             />
           </Route>
         </Switch>

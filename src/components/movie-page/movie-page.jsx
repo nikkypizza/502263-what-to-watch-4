@@ -1,42 +1,22 @@
 import React from 'react';
-import {arrayOf, shape, string, number} from 'prop-types';
+import {arrayOf, shape, string, number, object, func} from 'prop-types';
 
-const generateRatingStr = (int) => {
-  if (int < 3) {
-    return `Bad`;
-  } else if (int >= 3 && int < 5) {
-    return `Normal`;
-  } else if (int >= 5 && int < 8) {
-    return `Good`;
-  } else if (int >= 8 && int < 10) {
-    return `Very good`;
-  } else {
-    return `Awesome`;
-  }
-};
-const getRatingPlural = (int) => `${int} rating${int !== 1 ? `s` : ``}`;
-const getActorsStringWithPostfix = (arr) => arr.length ? `${arr.join(`, `)} and others` : ``;
+import Tabs from '../tabs/tabs.jsx';
+import MoviesList from '../movies-list/movies-list.jsx';
 
-const MoviePage = ({
-  movieData: {
-    themeColor,
-    rating,
-    ratingsAmount,
-    plot,
-    director,
-    actors,
-    backdropPosterUrl,
-    title,
-    genre,
-    releaseYear,
-    mainPosterUrl}
-}) => {
+const MoviePage = ({movieData, dataArr, onCardClick}) => {
+  const CARD_AMOUNT_LIMIT = 4;
+  const currentGenre = movieData.genre || `Drama`;
+
+  const listFilterdByGenre = dataArr.filter((it) => it.genre === currentGenre);
+  listFilterdByGenre.length = CARD_AMOUNT_LIMIT;
+
   return (
     <>
-      <section className="movie-card movie-card--full" style={{background: themeColor}}>
+      <section className="movie-card movie-card--full" style={{background: movieData.themeColor}}>
         <div className="movie-card__hero">
           <div className="movie-card__bg">
-            <img src={backdropPosterUrl} alt={title} />
+            <img src={movieData.backdropPosterUrl} alt={movieData.title} />
           </div>
 
           <h1 className="visually-hidden">WTW</h1>
@@ -59,10 +39,10 @@ const MoviePage = ({
 
           <div className="movie-card__wrap">
             <div className="movie-card__desc">
-              <h2 className="movie-card__title">{title}</h2>
+              <h2 className="movie-card__title">{movieData.title}</h2>
               <p className="movie-card__meta">
-                <span className="movie-card__genre">{genre}</span>
-                <span className="movie-card__year">{releaseYear}</span>
+                <span className="movie-card__genre">{movieData.genre}</span>
+                <span className="movie-card__year">{movieData.releaseYear}</span>
               </p>
 
               <div className="movie-card__buttons">
@@ -87,40 +67,9 @@ const MoviePage = ({
         <div className="movie-card__wrap movie-card__translate-top">
           <div className="movie-card__info">
             <div className="movie-card__poster movie-card__poster--big">
-              <img src={mainPosterUrl} alt={`${title} poster`} width="218" height="327" />
+              <img src={movieData.mainPosterUrl} alt={`${movieData.title} poster`} width="218" height="327" />
             </div>
-
-            <div className="movie-card__desc">
-              <nav className="movie-nav movie-card__nav">
-                <ul className="movie-nav__list">
-                  <li className="movie-nav__item movie-nav__item--active">
-                    <a href="#" className="movie-nav__link">Overview</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Details</a>
-                  </li>
-                  <li className="movie-nav__item">
-                    <a href="#" className="movie-nav__link">Reviews</a>
-                  </li>
-                </ul>
-              </nav>
-
-              <div className="movie-rating">
-                <div className="movie-rating__score">{rating}</div>
-                <p className="movie-rating__meta">
-                  <span className="movie-rating__level">{generateRatingStr(rating)}</span>
-                  <span className="movie-rating__count">
-                    {getRatingPlural(ratingsAmount)}
-                  </span>
-                </p>
-              </div>
-
-              <div className="movie-card__text">
-                {plot.map((it, i) => <p key={`element-${i}`}> {it} </p>)}
-                <p className="movie-card__director"><strong>Director: {director}</strong></p>
-                <p className="movie-card__starring"><strong>Starring: {getActorsStringWithPostfix(actors)} </strong></p>
-              </div>
-            </div>
+            <Tabs movieData={movieData}/>
           </div>
         </div>
       </section >
@@ -128,44 +77,7 @@ const MoviePage = ({
       <div className="page-content">
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
-
-          <div className="catalog__movies-list">
-            <article className="small-movie-card catalog__movies-card">
-              <div className="small-movie-card__image">
-                <img src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" alt="Fantastic Beasts: The Crimes of Grindelwald" width="280" height="175" />
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">Fantastic Beasts: The Crimes of Grindelwald</a>
-              </h3>
-            </article>
-
-            <article className="small-movie-card catalog__movies-card">
-              <div className="small-movie-card__image">
-                <img src="img/bohemian-rhapsody.jpg" alt="Bohemian Rhapsody" width="280" height="175" />
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">Bohemian Rhapsody</a>
-              </h3>
-            </article>
-
-            <article className="small-movie-card catalog__movies-card">
-              <div className="small-movie-card__image">
-                <img src="img/macbeth.jpg" alt="Macbeth" width="280" height="175" />
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">Macbeth</a>
-              </h3>
-            </article>
-
-            <article className="small-movie-card catalog__movies-card">
-              <div className="small-movie-card__image">
-                <img src="img/aviator.jpg" alt="Aviator" width="280" height="175" />
-              </div>
-              <h3 className="small-movie-card__title">
-                <a className="small-movie-card__link" href="movie-page.html">Aviator</a>
-              </h3>
-            </article>
-          </div>
+          <MoviesList dataArr={listFilterdByGenre} onMovieCardClick={onCardClick}/>
         </section>
 
         <footer className="page-footer">
@@ -199,8 +111,9 @@ MoviePage.propTypes = {
     plot: arrayOf(string).isRequired,
     director: string.isRequired,
     actors: arrayOf(string).isRequired
-  })
+  }),
+  dataArr: arrayOf(object.isRequired).isRequired,
+  onCardClick: func.isRequired
 };
 
-export {generateRatingStr, getRatingPlural, getActorsStringWithPostfix};
 export default MoviePage;
